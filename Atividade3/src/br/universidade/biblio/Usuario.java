@@ -2,26 +2,21 @@ package br.universidade.biblio;
 
 public class Usuario {
     private String nome;
-    private int id;
+    private String matricula;
+    private String curso;
 
-    public Usuario(int id, String nome){
-        this.id = id;
+    public Usuario(String nome, String matricula, String curso) {
         this.nome = nome;
+        this.matricula = matricula;
+        this.curso = curso;
     }
 
-    public int getId() {
-        return id;
-    }
+    public String getNome() { return nome; }
+    public String getMatricula() { return matricula; }
+    public String getCurso() { return curso; }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    @Override
+    public String toString() {
+        return "Usuário{nome='" + nome + "', Matrícula='" + matricula + "', Curso=" + curso + "}";
     }
 }
