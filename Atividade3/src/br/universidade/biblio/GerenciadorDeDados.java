@@ -48,7 +48,7 @@ public class GerenciadorDeDados {
         }
     }
 
-    public synchronized Livro consultarLivroBanco() {
+    public synchronized Livro consultarLivroBanco(Livro livro) {
         try {
             Database db = carregar();
             if (db.LIVRO.isEmpty()) return null;
@@ -123,6 +123,17 @@ public class GerenciadorDeDados {
             Database db = carregar();
             if (db.EMPRESTIMO.isEmpty()) return null;
             return db.EMPRESTIMO.get(db.EMPRESTIMO.size() - 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public synchronized List<Emprestimo> consultarTodosEmprestimosBanco() {
+        try {
+            Database db = carregar();
+            if (db.EMPRESTIMO.isEmpty()) return null;
+            return db.EMPRESTIMO;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
