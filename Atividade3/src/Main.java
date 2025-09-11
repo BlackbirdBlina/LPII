@@ -6,6 +6,7 @@ import br.universidade.biblio.Usuario;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -44,8 +45,12 @@ public class Main {
             System.out.println("O livro está atrasado, por favor devolver!");
         }
 
-        Livro ultimo = gd.consultarLivroBanco();
-        System.out.println("Último livro cadastrado: " + ultimo);
+        Livro consulta1 = gd.consultarLivroBanco();
+        Livro consulta2 = gd.consultarLivroPorTitulo("Estruturas de Dados");
+        List<Livro> consulta3 = gd.consultarTodosLivrosBanco();
+        System.out.println("Este é o último livro cadastrado: " + consulta1);
+        System.out.println("Este é o livro que você buscou: " + consulta2);
+        System.out.println("Estes são todos os livros cadastrados: " + consulta3);
 
         System.out.println("Pronto! Verifique o arquivo " + caminho);
     }
