@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -97,8 +98,7 @@ public class GerenciadorDeDados {
             Database db = carregar();
             for (Usuario existente : db.USUARIO) {
                 if (igualUsuario(existente, usuario)) {
-                    salvar(db);
-                    return true;
+                    return false;
                 }
             }
             db.USUARIO.add(usuario);
@@ -115,6 +115,33 @@ public class GerenciadorDeDados {
             Database db = carregar();
             if (db.USUARIO.isEmpty()) return null;
             return db.USUARIO.get(db.USUARIO.size() - 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public synchronized Usuario consultarUsuarioPorMatricula(String matricula) {
+        try {
+            Database db = carregar();
+            if (db.USUARIO.isEmpty()) return null;
+            for(Usuario existente : db.USUARIO) {
+                if(matricula.equalsIgnoreCase(existente.getMatricula())){
+                    return existente;
+                }
+            }
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public synchronized List<Usuario> consultarTodosUsuariosBanco() {
+        try {
+            Database db = carregar();
+            if (db.USUARIO.isEmpty()) return null;
+            return db.USUARIO;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -150,6 +177,22 @@ public class GerenciadorDeDados {
             Database db = carregar();
             if (db.EMPRESTIMO.isEmpty()) return null;
             return db.EMPRESTIMO.get(db.EMPRESTIMO.size() - 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public synchronized Emprestimo consultarEmprestimoPorID(int id) {
+        try {
+            Database db = carregar();
+            if (db.EMPRESTIMO.isEmpty()) return null;
+            for(Emprestimo existente : db.EMPRESTIMO) {
+                if(id == existente.getId()){
+                    return existente;
+                }
+            }
+            return null;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
