@@ -17,6 +17,6 @@ public class PagamentoPix extends Pagamento {
 
     @Override
     public void processar(double valor) {
-       System.out.println("Pagamento no valor de: " + valor + " processado via Pix com a chave: " + chavePix);
+       System.out.println("Pagamento no valor de: R$ " + valor + " processado via Pix com a chave: " + chavePix);
     }
 }

@@ -48,6 +48,6 @@ public class PagamentoCartao extends Pagamento {
 
     @Override
     public void processar(double valor) {
-        System.out.println("Pagamento no valor de: " + valor + " processado via Cartão com o número: " + numeroCartao);
+        System.out.println("Pagamento no valor de: R$ " + valor + " processado via Cartão com o número: " + numeroCartao);
     }
 }
