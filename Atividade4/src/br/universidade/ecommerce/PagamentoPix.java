@@ -1,5 +1,6 @@
 package br.universidade.ecommerce;
 
+// Herança, conforme consta no 1º ponto (Herança)
 public class PagamentoPix extends Pagamento {
     private String chavePix;
 
@@ -17,6 +18,6 @@ public class PagamentoPix extends Pagamento {
 
     @Override
     public void processar(double valor) {
-       System.out.println("Pagamento no valor de: R$ " + valor + " processado via Pix com a chave: " + chavePix);
+       System.out.println("Pagamento no valor de: R$ " + valor + " processado via Pix com a chave: " + chavePix + "\n");
     }
 }

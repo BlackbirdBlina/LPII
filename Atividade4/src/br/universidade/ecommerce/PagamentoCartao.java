@@ -1,6 +1,6 @@
 package br.universidade.ecommerce;
 
-
+// Herança, conforme consta no 1º ponto (Herança)
 public class PagamentoCartao extends Pagamento {
     private String numeroCartao;
     private String nomeTitular;
@@ -48,6 +48,6 @@ public class PagamentoCartao extends Pagamento {
 
     @Override
     public void processar(double valor) {
-        System.out.println("Pagamento no valor de: R$ " + valor + " processado via Cartão com o número: " + numeroCartao);
+        System.out.println("Pagamento no valor de: R$ " + valor + " processado via Cartão com o número: " + numeroCartao + "\n");
     }
 }
