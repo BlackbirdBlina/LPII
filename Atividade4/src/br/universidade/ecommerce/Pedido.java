@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
+    // Agregado, conforme consta no 4º ponto (Agregação)
     private Cliente cliente;
     private String cep;
     private List<Produto> itemPedido;
@@ -66,7 +67,7 @@ public class Pedido {
 
         }
 
-        // produto não encontrado na lista, criando um novo produto fictício (SOLUÇÃO MUITO LONGE DA IDEAL)
+        // produto não encontrado na lista, criando um novo produto fictício (SOLUÇÃO SIMPLES E MUITO LONGE DA IDEAL)
         if(codProduto.equalsIgnoreCase("123abc")){
             Produto produto = new Produto(codProduto, 100.0, 2.0);
             produto.setQuantidade(quantidade);
@@ -92,6 +93,14 @@ public class Pedido {
        return total;
     }
 
+    public boolean removerPedido(){
+        for(Produto p : itemPedido){
+            // Apesar da remoção limpar totalmente o array com método clear, foi colocado um print para demonstrar que os itens estão sendo removidos
+            System.out.println("Removendo item: " + p.getCodProduto() + " quantidade: " + p.getQuantidade());
+        }
+        this.itemPedido.clear();
+        return true;
+    }
 }
 
 
