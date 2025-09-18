@@ -7,7 +7,7 @@ public class Pedido {
     // Agregado, conforme consta no 4º ponto (Agregação)
     private Cliente cliente;
     private String cep;
-    private List<Produto> itemPedido;
+    private final List<Produto> itemPedido;
 
     public Pedido(Cliente cliente) {
         this.cliente = cliente;
