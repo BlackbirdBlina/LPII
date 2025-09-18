@@ -1,6 +1,7 @@
 # Projeto Mini e-commerce
 
-## Implementar um mini sistema de e-commerce que permita cadastrar produtos e clientes, criar pedidos com itens, calcular total, aplicar frete/pagamento usando polimorfismo, e demonstrar composição e agregação de forma explícita.
+## Modelo do projeto, feito pelo Prof. Dr. Alan Santana
+### Implementar um mini sistema de e-commerce que permita cadastrar produtos e clientes, criar pedidos com itens, calcular total, aplicar frete/pagamento usando polimorfismo, e demonstrar composição e agregação de forma explícita.
 
 
 * ### Herança + Override (polimorfismo dinâmico):
