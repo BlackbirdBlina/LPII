@@ -53,11 +53,11 @@ public class Pedido {
     }
 
     public void adicionarItem(String codProduto, int quantidade){
+
         /* Por limitações da modelagem do projeto, não foi feita a busca adequada do produto para este método.
         Portanto, usou-se informações fictícias sendo criados códigos imaginários de produtos, passados diretamente no condicional.
         Nesse sentido, não se tem um banco com essas informações cadastradas, há apenas uma demonstração superficial
         de como seria essa comparação para adicionar o item/produto */
-
         for(Produto produto : itemPedido){
             if(produto.getCodProduto().equalsIgnoreCase(codProduto)){
                 produto.setQuantidade(produto.getQuantidade() + quantidade);
@@ -65,9 +65,10 @@ public class Pedido {
             }
 
         }
+
         // produto não encontrado na lista, criando um novo produto fictício (SOLUÇÃO MUITO LONGE DA IDEAL)
         if(codProduto.equalsIgnoreCase("123abc")){
-            Produto produto = new Produto(codProduto, 100.0, 2.0); // valores fictícios de valor e peso
+            Produto produto = new Produto(codProduto, 100.0, 2.0);
             produto.setQuantidade(quantidade);
             this.itemPedido.add(produto);
         } else if (codProduto.equalsIgnoreCase("123abc4")) {
@@ -81,6 +82,14 @@ public class Pedido {
         } else {
             System.out.println("Código inválido. Produto não adicionado.");
         }
+    }
+
+    public double calcularValorProdutos(){
+        double total = 0.0;
+        for(Produto produto : itemPedido){
+            total += produto.getValor() * produto.getQuantidade();
+       }
+       return total;
     }
 
 }
