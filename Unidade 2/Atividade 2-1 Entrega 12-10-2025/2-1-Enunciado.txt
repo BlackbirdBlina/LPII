@@ -1,0 +1,30 @@
+Tratamento de Exceções (1 pts)
+
+Entrega: 12/10/2025
+
+Aulas relacionadas:
+02/10 – Tratamento de exceções em Java
+07/10 – Hierarquia de exceções e boas práticas
+
+Você receberá um programa base em Java, que lê dados de um arquivo .txt contendo informações numéricas.
+O programa atualmente não possui tratamento de exceções.
+
+Tarefa do aluno
+
+Inserir tratamento adequado para os seguintes cenários:
+Arquivo inexistente
+	Exibir mensagem clara ao usuário.
+	Exemplo: "Erro: arquivo não encontrado."
+Dados em formato incorreto (o programa aceita apenas números positivos sem o 0)
+	Exibir mensagem amigável.
+	Exemplo: "Erro: formato inválido, insira apenas números positivos."
+Regra de negócio violada
+	Criar uma exceção personalizada (MinhaExcecao) e lançá-la quando um número negativo ou 0 for encontrado.
+	Exibir mensagem: "Erro: número negativo não permitido."
+Utilizar blocos try-catch-finally corretamente.
+
+Critérios de Avaliação (2 pts)
+0,25 pt → Tratamento de FileNotFoundException com mensagem amigável.
+0,25 pt → Tratamento de NumberFormatException ou similar.
+0,25 pt → Implementação e uso correto de exceção personalizada (MinhaExcecao).
+0,25 pt → Uso correto de try-catch-finally e boas práticas de código.
